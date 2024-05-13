@@ -214,20 +214,6 @@ const Quiz = () => {
             </button>
           </div>
         )}
-        {showAnswers && (
-          <div className="mt-4">
-            <h2>Your Score: {score}</h2>
-            <h2>Correct Answers:</h2>
-            <ul>
-              {questions.map((question, index) => (
-                <li key={index}>
-                  {question.question}: {question.correctAnswer}
-                </li>
-              ))}
-            </ul>
-            {/* You can add rendering of incorrect answers here if you have them */}
-          </div>
-        )}
       </div>
     </div>
   );
