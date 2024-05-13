@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <div className="w-full h-auto">
+      <div className="w-full h-auto ">
         {/* CONTENT 1 */}
         <Header />
-        <div className="w-full bg-cyan-500 flex justify-around items-center py-40 relative">
+        <div className="w-full bg-cyan-500 flex justify-around items-center py-40 relative ">
           <svg
             className="absolute bottom-0 w-full overflow-hidden"
             xmlns="http://www.w3.org/2000/svg"
