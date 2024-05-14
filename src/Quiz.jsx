@@ -10,6 +10,7 @@ const Quiz = () => {
   const [pauseTimer, setPauseTimer] = useState(false);
   const [countdownKey, setCountdownKey] = useState(0);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [showSubmit, setShowSubmit] = useState(false);
   const [score, setScore] = useState(0);
 
   const questions = [
@@ -122,15 +123,9 @@ const Quiz = () => {
       setSelectedOptions(newSelectedOptions);
       setPauseTimer(true);
 
-      // Calculate score for the last question
-      if (currentQuestionIndex === questions.length - 1) {
-        const correctIndex = questions[questionIndex].options.findIndex(
-          (option) => option === questions[questionIndex].correctAnswer
-        );
-        if (optionIndex === correctIndex) {
-          setScore(score + 1);
-        }
-        setShowLeaderboard(true);
+      // Show the submit button if it's the last question
+      if (questionIndex === questions.length - 1) {
+        setShowSubmit(true);
       }
     }
   };
@@ -147,8 +142,6 @@ const Quiz = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setPauseTimer(false);
       setCountdownKey((prevKey) => prevKey + 1);
-    } else {
-      setShowLeaderboard(true);
     }
   };
 
@@ -158,6 +151,7 @@ const Quiz = () => {
     setPauseTimer(false);
     setCountdownKey((prevKey) => prevKey + 1); // Reset the countdown
     setShowLeaderboard(false);
+    setShowSubmit(false);
     setScore(0);
   };
 
@@ -193,7 +187,7 @@ const Quiz = () => {
             <div className="flex justify-between items-center px-5">
               <p className="text-yellow-300 text-xl">Solid State Quiz 1</p>
               <div className="flex items-center gap-3">
-                <IoVolumeHighSharp className="text-white text-2xl"/>
+                <IoVolumeHighSharp className="text-white text-2xl" />
                 <button className=" flex align-middle items-center gap-1 p-2 bg-purple-500 rounded-3xl px-4 text-[#FFD700]">
                   <TbCoinRupeeFilled className="text-3xl " />0
                 </button>
@@ -218,7 +212,7 @@ const Quiz = () => {
                 <p className="text-lg font-semibold mb-4">
                   {questions[currentQuestionIndex].question}
                 </p>
-                
+
                 <ul>
                   {questions[currentQuestionIndex].options.map(
                     (option, optionIndex) => (
@@ -238,7 +232,7 @@ const Quiz = () => {
                   )}
                 </ul>
                 <div className="max-[768px]:hidden">
-                  {currentQuestionIndex < questions.length - 1 && (
+                  {currentQuestionIndex < questions.length - 1 ? (
                     <div className="w-full flex justify-center">
                       <button
                         onClick={handleNextClick}
@@ -247,22 +241,23 @@ const Quiz = () => {
                         Next Question
                       </button>
                     </div>
+                  ) : (
+                    selectedOptions[currentQuestionIndex] !== null && (
+                      <div className="w-full flex justify-center">
+                        <button
+                          onClick={() => setShowLeaderboard(true)}
+                          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    )
                   )}
                 </div>
-                {showLeaderboard && (
-                  <div className="w-full flex justify-center">
-                    <button
-                      onClick={() => setShowLeaderboard(true)}
-                      className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
-                    >
-                      Leaderboard
-                    </button>
-                  </div>
-                )}
               </div>
 
               <div className="w-full min-[768px]:hidden mt-6 ">
-                {currentQuestionIndex < questions.length - 1 && (
+                {currentQuestionIndex < questions.length - 1 ? (
                   <div className="bg-blue-500 flex justify-between align-middle items-center mx-5 rounded-2xl">
                     <button
                       onClick={handleNextClick}
@@ -271,6 +266,17 @@ const Quiz = () => {
                       Next Question
                     </button>
                   </div>
+                ) : (
+                  selectedOptions[currentQuestionIndex] !== null && (
+                    <div className="bg-blue-500 flex justify-between align-middle items-center mx-5 rounded-2xl">
+                      <button
+                        onClick={() => setShowLeaderboard(true)}
+                        className=" bg-[#306d7d] text-white rounded-lg w-full p-4 text-xl font-semibold"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  )
                 )}
               </div>
             </div>

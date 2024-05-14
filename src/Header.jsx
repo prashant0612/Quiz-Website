@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center bg-[#06b6d4] text-yellow-300 p-2 px-8 text-xl max-[768px]:text-sm max-[768px]:px-2 fixed z-30 w-full top-0">
+      <div className="flex justify-between items-center bg-[#06b6d4] text-yellow-300 p-2 px-8 text-xl max-[768px]:text-sm max-[768px]:px-2 sticky z-30 w-full top-0">
         <div className="min-[768px]:hidden text-xl font-semibold">
           {/* Hamburger Menu Button */}
           <button onClick={toggleMenu} className="text-black text-2xl p-2">

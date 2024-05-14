@@ -9,23 +9,24 @@ import LeaderboardDetails from "./LeaderboardDetails";
 const Leaderboard = ({ score, totalQuestions }) => {
   return (
     <>
-      <div className="w-full h-screen bg-[#1b363e] mt-14">
+      <div className="w-full h-screen bg-[#1b363e] mt-14 max-[768px]:mt-0">
         <div className="max-[768px]:w-full">
           <Header/>
         </div>
         <div className="w-full flex justify-center flex-col align-middle items-center mt-10 max-[768px]:px-5 ">
-          <h1 className="text-3xl font-semibold mb-28 text-yellow-400 max-[768px]:mt-10">
+          <h1 className="text-3xl font-semibold mb-28 text-yellow-400 max-[768px]:mt-10 mt-5">
             Leaderboard
           </h1>
 
           <div className="flex justify-center items-end w-[60%] relative py-20 max-[768px]:w-full">
+            
             <div className="w-44 bg-[#2e4950] h-32 rounded-l-xl max-[768px]:w-full">
               <img
                 src="https://quizard.app/images/userImage.webp"
                 alt="img"
                 className="absolute w-20 left-[27%] top-20 rounded-full border-2 border-blue-400 max-[768px]:left-[9%]"
               />
-              <span className="relative top-[1.3rem] left-[4.6rem]">
+              <span className="relative top-[1.3rem] left-[4.9rem] max-[768px]:left-[4.5rem]">
                 <FaDiamond className="text-3xl text-cyan-300" />
                 <p className="absolute top-0.5 left-2.5">2</p>
               </span>
@@ -73,9 +74,10 @@ const Leaderboard = ({ score, totalQuestions }) => {
             </div>
           </div>
         </div>
-        {/* <p className="text-lg mb-4">Your Score: {score} / {totalQuestions}</p> */}
 
-        <div className="bg-[#1b363e] w-full flex items-center justify-center ">
+        <p className="text-lg mb-4 text-center text-white font-semibold">Your Score: {score} / {totalQuestions}</p>
+
+        <div className="bg-[#1b363e] w-full flex items-center justify-center pb-10">
           <div className="w-[60%] p-5 flex flex-col gap-5 bg-[#293437] rounded-t-2xl max-[768px]:w-full">
             <LeaderboardDetails rank={300} name={"Prashant Verma"} point={30} />
             <LeaderboardDetails rank={4} name={"Rahul Raj"} point={300} />
