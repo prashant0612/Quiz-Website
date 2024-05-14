@@ -198,7 +198,7 @@ const Quiz = () => {
                 Solid State Quiz 1
               </p>
               <div className="w-1/2 h-3/4 bg-[#193037] p-8 rounded-xl max-[768px]:w-full text-white max-[768px]:h-auto">
-                <div className="max-[768px]:flex justify-between flex-row-reverse">
+                <div className="max-[768px]:flex flex justify-center flex-col align-middle items-center">
                   <CountdownTimer
                     onComplete={handleNextClick}
                     pause={pauseTimer}
