@@ -68,9 +68,10 @@ const Home = () => {
         {/* CONTENT-3 */}
         <div className="mb-10 px-20">
           <p className="text-4xl mb-6">Chemistry</p>
-          <Link to="/startpage">
-            <div className="w-[20%]  border-2 border-gray-500 h-60 rounded-xl relative">
-              <div  className="relative">
+
+          <div className="w-[20%]  border-2 border-gray-500 h-60 rounded-xl relative">
+            <Link to="/startpage">
+              <div className="relative">
                 <img
                   src="https://media.istockphoto.com/id/1616906708/vector/vector-speech-bubble-with-quiz-time-words-trendy-text-balloon-with-geometric-grapic-shape.jpg?s=612x612&w=0&k=20&c=3-qsji8Y5QSuShaMi6cqONlVZ3womknA5CiJ4PCeZEI="
                   alt="imgs"
@@ -88,8 +89,8 @@ const Home = () => {
               <div>
                 <p className="px-2">Solid State Quiz 1</p>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
         <Footer />
       </div>
