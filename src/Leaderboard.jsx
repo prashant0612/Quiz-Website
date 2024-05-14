@@ -9,7 +9,7 @@ import LeaderboardDetails from "./LeaderboardDetails";
 const Leaderboard = ({ score, totalQuestions }) => {
   return (
     <>
-      <div className="w-full h-screen bg-[#1b363e] mt-14 max-[768px]:mt-0 overflow-x-hidden">
+      <div className="w-full h-screen bg-[#1b363e] mt-14 max-[768px]:mt-0 overflow-x-hidden scroll-smooth">
         <div className="max-[768px]:w-full">
           <Header />
         </div>

@@ -11,7 +11,7 @@ import { FaCircleUser } from "react-icons/fa6";
 const Home = () => {
   return (
     <>
-      <div className="w-full h-auto relative">
+      <div className="w-full h-auto relative scroll-smooth">
         {/* CONTENT 1 */}
         <Header />
         <div className="w-full bg-cyan-500 flex justify-around flex-wrap items-center py-40 relative max-[768px]:justify-normal max-[768px]:py-10">
