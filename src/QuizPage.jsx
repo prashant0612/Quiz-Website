@@ -19,7 +19,7 @@ const Countdown = ({ onComplete }) => {
 
   return (
     <>
-      <div className="bg-cyan-600 h-screen flex justify-center align-middle items-center text-center text-[8rem] font-semibold text-white">
+      <div className="bg-cyan-600 h-screen flex justify-center align-middle items-center text-center text-[8rem] font-semibold text-white max-[768px]:text-[3rem]">
         {count > 0 ? `Quiz Starts in ${count}` : count === 1 ? "Go!" : ""}
       </div>
     </>
@@ -48,7 +48,7 @@ const QuizPage = () => {
   return (
     <>
       {showReady && (
-        <div className="bg-cyan-600 h-screen flex justify-center align-middle items-center text-[9rem] font-semibold text-white">
+        <div className="bg-cyan-600 h-screen flex justify-center align-middle items-center text-[9rem] font-semibold text-white max-[768px]:text-[3.5rem]">
           Ready
         </div>
       )}
