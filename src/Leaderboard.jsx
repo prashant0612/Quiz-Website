@@ -1,19 +1,21 @@
+// Leaderboard.js
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { FaDiamond } from "react-icons/fa6";
 import trophy from "/trophy.png";
-
+import FlowerAnimation from "./FlowerAnimation"; // Import the animation component
 import LeaderboardDetails from "./LeaderboardDetails";
 
 const Leaderboard = ({ score, totalQuestions }) => {
   return (
     <>
-      <div className="w-full h-screen bg-[#1b363e]  max-[768px]:mt-0 overflow-x-hidden scroll-smooth">
+      <div className="w-full h-screen bg-[#1b363e] max-[768px]:mt-0 overflow-x-hidden scroll-smooth">
+        <FlowerAnimation />
         <div className="max-[768px]:w-full">
           <Header />
         </div>
-        <div className="w-full flex justify-center flex-col align-middle items-center mt-10 max-[768px]:px-5 ">
+        <div className="w-full flex justify-center flex-col align-middle items-center mt-10 max-[768px]:px-5">
           <h1 className="text-3xl font-semibold mb-28 text-yellow-400 max-[768px]:mt-10 mt-5">
             Leaderboard
           </h1>
@@ -39,7 +41,7 @@ const Leaderboard = ({ score, totalQuestions }) => {
               <img
                 src="https://quizard.app/images/userImage.webp"
                 alt="img"
-                className="absolute w-24 left-[45%] top-6 rounded-full border-2 border-yellow-400 max-[768px]:left-[35%] "
+                className="absolute w-24 left-[45%] top-6 rounded-full border-2 border-yellow-400 max-[768px]:left-[35%]"
               />
               <img
                 src={trophy}
@@ -62,9 +64,9 @@ const Leaderboard = ({ score, totalQuestions }) => {
                 alt="img"
                 className="absolute w-20 left-[26%] top-[-40px] rounded-full border-2 border-green-400 max-[768px]:left-[14%]"
               />
-              <span className="relative top-[1.3rem] left-[2.6rem]">
+              <span className="relative top-[1.3rem] left-[4.5rem] max-[768px]:left-[2.6rem]">
                 <FaDiamond className="text-3xl text-green-400" />
-                <p className="absolute top-0.5 left-2.5">3</p>
+                <p className="absolute top-0.5 left-2.5 ">3</p>
               </span>
               <div className="mt-7 font-bold">
                 <p className="text-white text-center">User 3</p>
@@ -73,11 +75,9 @@ const Leaderboard = ({ score, totalQuestions }) => {
             </div>
           </div>
         </div>
-
         <p className="text-lg mb-4 text-center text-white font-semibold">
           Your Score: {score} / {totalQuestions}
         </p>
-
         <div className="bg-[#1b363e] w-full flex items-center justify-center pb-10">
           <div className="w-[60%] p-5 flex flex-col gap-5 bg-[#293437] rounded-t-2xl max-[768px]:w-full">
             <LeaderboardDetails rank={300} name={"Prashant Verma"} point={30} />
