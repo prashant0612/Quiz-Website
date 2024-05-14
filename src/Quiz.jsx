@@ -186,7 +186,8 @@ const Quiz = () => {
           onRestart={handleRestart}
         />
       ) : (
-        <div className="flex justify-center items-center w-full h-screen bg-cyan-600">
+        <div className="flex justify-center flex-col items-center w-full h-screen bg-cyan-600">
+          <p className="text-center text-3xl mb-5 font-bold text-white">Solid State Quiz 1</p>
           <div className="w-1/2 h-3/4 bg-gray-200 p-8 rounded-xl">
             <CountdownTimer
               onComplete={handleNextClick}
