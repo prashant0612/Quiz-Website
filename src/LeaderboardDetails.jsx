@@ -19,8 +19,8 @@ const LeaderboardDetails = (props) => {
             <p className="ml-3 font-bold">{name}</p>
           </div>
         </div>
-        <div className="w-[10%] flex items-center text-white">
-          <TbCoinRupeeFilled className="text-yellow-300 text-3xl" />
+        <div className="w-[10%] flex items-center text-white max-[768px]:w-[20%]">
+          <TbCoinRupeeFilled className="text-yellow-300 text-3xl " />
           <p className="ml-2 font-bold">{point}</p>
         </div>
       </div>
