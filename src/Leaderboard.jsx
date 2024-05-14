@@ -9,14 +9,14 @@ import LeaderboardDetails from "./LeaderboardDetails";
 const Leaderboard = ({ score, totalQuestions }) => {
   return (
     <>
-      <div className="w-full h-screen bg-[#1b363e]">
+      <div className="w-full h-screen bg-[#1b363e] mt-14">
         <Header />
         <div className="w-full flex justify-center flex-col align-middle items-center mt-10 ">
-          <h1 className="text-3xl font-semibold mb-28 text-yellow-400 ">
+          <h1 className="text-3xl font-semibold mb-28 text-yellow-400 max-[768px]:mt-10">
             Leaderboard
           </h1>
 
-          <div className="flex justify-center items-end w-[60%] relative py-20 ">
+          <div className="flex justify-center items-end w-[60%] relative py-20 max-[768px]:w-full">
             <div className="w-44 bg-[#2e4950] h-32 rounded-l-xl ">
               <img
                 src="https://quizard.app/images/userImage.webp"

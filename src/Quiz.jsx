@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import Leaderboard from "./Leaderboard";
+import { IoVolumeHighSharp } from "react-icons/io5";
+import { TbCoinRupeeFilled } from "react-icons/tb";
 
 const Quiz = () => {
   const [selectedOptions, setSelectedOptions] = useState(Array(15).fill(null));
@@ -118,7 +120,7 @@ const Quiz = () => {
       const newSelectedOptions = [...selectedOptions];
       newSelectedOptions[questionIndex] = optionIndex;
       setSelectedOptions(newSelectedOptions);
-      setPauseTimer(true); 
+      setPauseTimer(true);
 
       // Calculate score for the last question
       if (currentQuestionIndex === questions.length - 1) {
@@ -186,60 +188,94 @@ const Quiz = () => {
           onRestart={handleRestart}
         />
       ) : (
-        <div className="flex justify-center flex-col items-center w-full h-screen bg-cyan-600">
-          <p className="text-center text-3xl mb-5 font-bold text-white">Solid State Quiz 1</p>
-          <div className="w-1/2 h-3/4 bg-gray-200 p-8 rounded-xl">
-            <CountdownTimer
-              onComplete={handleNextClick}
-              pause={pauseTimer}
-              key={countdownKey}
-            />
-            <p className="text-lg font-semibold mb-4">
-              {questions[currentQuestionIndex].question}
-            </p>
-            <p className="mb-2">
-              Question {currentQuestionIndex + 1} of {questions.length}
-            </p>
-            <ul>
-              {questions[currentQuestionIndex].options.map(
-                (option, optionIndex) => (
-                  <li
-                    key={optionIndex}
-                    onClick={() =>
-                      handleOptionClick(currentQuestionIndex, optionIndex)
-                    }
-                    className={`p-2 rounded-lg cursor-pointer mb-2 ${getOptionColor(
-                      currentQuestionIndex,
-                      optionIndex
-                    )}`}
-                  >
-                    {option}
-                  </li>
-                )
-              )}
-            </ul>
-            {currentQuestionIndex < questions.length - 1 && (
-              <div className="w-full flex justify-center">
-                <button
-                  onClick={handleNextClick}
-                  className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
-                >
-                  Next Question
+        <>
+          <div className="h-screen bg-[#1b363e] py-5">
+            <div className="flex justify-between items-center px-5">
+              <p className="text-yellow-300 text-xl">Solid State Quiz 1</p>
+              <div className="flex items-center gap-3">
+                <IoVolumeHighSharp className="text-white text-2xl"/>
+                <button className=" flex align-middle items-center gap-1 p-2 bg-purple-500 rounded-3xl px-4 text-[#FFD700]">
+                  <TbCoinRupeeFilled className="text-3xl " />0
                 </button>
               </div>
-            )}
-            {showLeaderboard && (
-              <div className="w-full flex justify-center">
-                <button
-                  onClick={() => setShowLeaderboard(true)}
-                  className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
-                >
-                  Leaderboard
-                </button>
+            </div>
+            <div className="flex justify-center flex-col items-center w-full bg-[#1b363e] max-[768px]:justify-normal max-[768px]:mt-10">
+              <p className="text-center text-3xl mb-5 font-bold text-white max-[768px]:text-md max-[768px]:hidden">
+                Solid State Quiz 1
+              </p>
+              <div className="w-1/2 h-3/4 bg-[#193037] p-8 rounded-xl max-[768px]:w-full text-white max-[768px]:h-auto">
+                <div className="max-[768px]:flex justify-between flex-row-reverse">
+                  <CountdownTimer
+                    onComplete={handleNextClick}
+                    pause={pauseTimer}
+                    key={countdownKey}
+                  />
+                  <p className="mb-2">
+                    Question {currentQuestionIndex + 1} of {questions.length}
+                  </p>
+                </div>
+
+                <p className="text-lg font-semibold mb-4">
+                  {questions[currentQuestionIndex].question}
+                </p>
+                
+                <ul>
+                  {questions[currentQuestionIndex].options.map(
+                    (option, optionIndex) => (
+                      <li
+                        key={optionIndex}
+                        onClick={() =>
+                          handleOptionClick(currentQuestionIndex, optionIndex)
+                        }
+                        className={`p-2 rounded-lg cursor-pointer mb-2 text-black ${getOptionColor(
+                          currentQuestionIndex,
+                          optionIndex
+                        )}`}
+                      >
+                        {option}
+                      </li>
+                    )
+                  )}
+                </ul>
+                <div className="max-[768px]:hidden">
+                  {currentQuestionIndex < questions.length - 1 && (
+                    <div className="w-full flex justify-center">
+                      <button
+                        onClick={handleNextClick}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
+                      >
+                        Next Question
+                      </button>
+                    </div>
+                  )}
+                </div>
+                {showLeaderboard && (
+                  <div className="w-full flex justify-center">
+                    <button
+                      onClick={() => setShowLeaderboard(true)}
+                      className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
+                    >
+                      Leaderboard
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
+
+              <div className="w-full min-[768px]:hidden mt-6 ">
+                {currentQuestionIndex < questions.length - 1 && (
+                  <div className="bg-blue-500 flex justify-between align-middle items-center mx-5 rounded-2xl">
+                    <button
+                      onClick={handleNextClick}
+                      className=" bg-[#306d7d] text-white rounded-lg w-full p-4 text-xl font-semibold"
+                    >
+                      Next Question
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaQuestionCircle } from "react-icons/fa";
+import { MdHome } from "react-icons/md";
+import { FaCircleUser } from "react-icons/fa6";
+
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -30,10 +33,14 @@ const StartQuizPage = () => {
           <img
             src="https://quizard.app/images/quiz.png"
             alt="img"
-            className="w-48"
+            className="w-48 max-[768px]:w-28"
           />
-          <h1 className="text-3xl">Solid State Quiz 1</h1>
-          <p>Answer these simple questions correctly and earn coins</p>
+          <h1 className="text-3xl max-[768px]:text-center">
+            Solid State Quiz 1
+          </h1>
+          <p className="max-[768px]:text-center">
+            Answer these simple questions correctly and earn coins
+          </p>
           <p className="text-xl">
             Difficulty Level:{" "}
             <span className="bg-white text-yellow-600 px-2 p-2 font-semibold rounded-lg">
@@ -56,7 +63,17 @@ const StartQuizPage = () => {
             </button>
           </div>
         </div>
-        <Footer />
+        <div className="max-[768px]:hidden">
+          <Footer />
+        </div>
+
+        <div className="w-full  bg-[#06b6d4] bottom-0 fixed p-3 z-50 text-3xl flex align-middle items-center justify-around min-[768px]:hidden">
+          <MdHome className="text-white cursor-pointer" />
+          <p className=" w-10 h-10 bg-yellow-300 text-center rounded-full cursor-pointer">
+            +
+          </p>
+          <FaCircleUser className="text-white cursor-pointer" />
+        </div>
       </div>
       {showModal && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
