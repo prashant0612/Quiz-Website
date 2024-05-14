@@ -1,5 +1,5 @@
 import React from "react";
-import Quiz from "../public/Quiz-img.png";
+import Quiz from "/Quiz-img.png";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";

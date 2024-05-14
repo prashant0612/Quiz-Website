@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const CountdownTimer = ({ onComplete, pause }) => {
+const CountdownTimer = ({ onComplete, pause, key }) => {
   const [secondsLeft, setSecondsLeft] = useState(60);
 
   useEffect(() => {
@@ -20,13 +20,11 @@ const CountdownTimer = ({ onComplete, pause }) => {
     }
 
     return () => clearInterval(interval);
-  }, [pause, onComplete]);
+  }, [pause, onComplete, key]);
 
   useEffect(() => {
-    if (pause) {
-      setSecondsLeft(60); // Reset timer if paused
-    }
-  }, [pause]);
+    setSecondsLeft(60);
+  }, [key]);
 
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;

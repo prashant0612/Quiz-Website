@@ -37,7 +37,7 @@ const QuizPage = () => {
 
     const quizTimer = setTimeout(() => {
       setShowContent(true);
-    }, 4000); // Ready message duration (1s) + Countdown duration (3s)
+    }, 4000);
 
     return () => {
       clearTimeout(readyTimer);
@@ -57,7 +57,6 @@ const QuizPage = () => {
       )}
       {showContent && (
         <div>
-          {/* Your quiz content goes here */}
           <Quiz/>
         </div>
       )}
