@@ -90,8 +90,8 @@ const Leaderboard = ({ score, totalQuestions }) => {
             <LeaderboardDetails rank={10} name={"Robot"} point={150} />
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };
