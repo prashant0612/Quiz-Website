@@ -36,25 +36,26 @@ const Leaderboard = ({ score, totalQuestions }) => {
                 <p className="text-cyan-300 text-center">60</p>
               </div>
             </div>
-
-            <div className="w-44 bg-[#2e4950] h-32 rounded-t-xl mb-10 max-[768px]:w-full ">
-              <img
-                src="https://quizard.app/images/userImage.webp"
-                alt="img"
-                className="absolute w-24 left-[45%] top-6 rounded-full border-2 border-yellow-400 max-[768px]:left-[35%]"
-              />
-              <img
-                src={trophy}
-                alt="img"
-                className="w-24 absolute -top-11 left-[45%] max-[768px]:left-[35%] max-[768px]:-top-10"
-              />
-              <span className="relative top-[1.3rem] left-[4.7rem] overflow-hidden max-[768px]:left-[2.3rem] max-[768px]:top-[1.1rem]">
-                <FaDiamond className="text-4xl text-yellow-300 " />
-                <a className="absolute top-0.5 left-2.5 text-2xl">1</a>
-              </span>
-              <div className="mt-7 font-bold">
-                <p className="text-white text-center">Patel Bhai</p>
-                <p className="text-yellow-300 text-center">100</p>
+            <div className="bg-[#2e4950] rounded-t-xl">
+              <div className="w-44 bg-[#2e4950] h-32 rounded-t-xl mb-10 max-[768px]:w-full ">
+                <img
+                  src="https://quizard.app/images/userImage.webp"
+                  alt="img"
+                  className="absolute w-24 left-[45%] top-6 rounded-full border-2 border-yellow-400 max-[768px]:left-[35%]"
+                />
+                <img
+                  src={trophy}
+                  alt="img"
+                  className="w-24 absolute -top-11 left-[45%] max-[768px]:left-[35%] max-[768px]:-top-10"
+                />
+                <span className="relative top-[1.3rem] left-[4.7rem] overflow-hidden max-[768px]:left-[2.3rem] max-[768px]:top-[1.1rem]">
+                  <FaDiamond className="text-4xl text-yellow-300 " />
+                  <a className="absolute top-0.5 left-2.5 text-2xl">1</a>
+                </span>
+                <div className="mt-7 font-bold">
+                  <p className="text-white text-center">Patel Bhai</p>
+                  <p className="text-yellow-300 text-center">100</p>
+                </div>
               </div>
             </div>
 
