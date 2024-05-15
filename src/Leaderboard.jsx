@@ -25,9 +25,9 @@ const Leaderboard = ({ score, totalQuestions }) => {
               <img
                 src="https://quizard.app/images/userImage.webp"
                 alt="img"
-                className="absolute w-20 left-[27%] top-20 rounded-full border-2 border-blue-400 max-[768px]:left-[5%]"
+                className="absolute w-20 left-[27%] top-20 rounded-full border-2 border-blue-400 max-[768px]:left-[5%] max-[768px]:top-28"
               />
-              <span className="relative top-[1.3rem] left-[4.9rem] max-[768px]:left-[2.5rem]">
+              <span className="relative top-[1.3rem] left-[4.9rem] max-[768px]:left-[2.6rem]">
                 <FaDiamond className="text-3xl text-cyan-300" />
                 <p className="absolute top-0.5 left-2.5">2</p>
               </span>
@@ -36,8 +36,8 @@ const Leaderboard = ({ score, totalQuestions }) => {
                 <p className="text-cyan-300 text-center">60</p>
               </div>
             </div>
-            <div className="bg-[#2e4950] rounded-t-xl">
-              <div className="w-44 bg-[#2e4950] h-32 rounded-t-xl mb-10 max-[768px]:w-full ">
+            <div className="bg-[#2e4950] rounded-t-xl max-[768px]:w-full">
+              <div className="w-44 bg-[#2e4950] h-32 rounded-t-xl mb-10 max-[768px]:w-full max-[768px]:h-40 ">
                 <img
                   src="https://quizard.app/images/userImage.webp"
                   alt="img"
