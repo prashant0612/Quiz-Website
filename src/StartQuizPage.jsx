@@ -4,23 +4,26 @@ import { FaQuestionCircle } from "react-icons/fa";
 import { MdHome } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
 
-
 import Header from "./Header";
 import Footer from "./Footer";
 
+// StartQuizPage component
 const StartQuizPage = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedMode, setSelectedMode] = useState(null);
+  const [showModal, setShowModal] = useState(false); // State to control the visibility of the modal
+  const [selectedMode, setSelectedMode] = useState(null); // State to keep track of the selected quiz mode
 
+  // Function to handle "Play" button click and show the modal
   const handlePlayClick = () => {
     setShowModal(true);
   };
 
+  // Function to handle mode selection and hide the modal
   const handleModeSelection = (mode) => {
     setSelectedMode(mode);
     setShowModal(false);
   };
 
+  // Function to handle closing the modal
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -67,14 +70,17 @@ const StartQuizPage = () => {
           <Footer />
         </div>
 
-        <div className="w-full  bg-[#06b6d4] bottom-0 fixed p-3 z-50 text-3xl flex align-middle items-center justify-around min-[768px]:hidden">
+        {/* Bottom navigation bar for small screens */}
+        <div className="w-full bg-[#06b6d4] bottom-0 fixed p-3 z-50 text-3xl flex align-middle items-center justify-around min-[768px]:hidden">
           <MdHome className="text-white cursor-pointer" />
-          <p className=" w-10 h-10 bg-yellow-300 text-center rounded-full cursor-pointer">
+          <p className="w-10 h-10 bg-yellow-300 text-center rounded-full cursor-pointer">
             +
           </p>
           <FaCircleUser className="text-white cursor-pointer" />
         </div>
       </div>
+
+      {/* Modal for selecting quiz mode */}
       {showModal && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-8 rounded-lg relative">
@@ -88,12 +94,12 @@ const StartQuizPage = () => {
                 />
                 <button
                   onClick={() => handleModeSelection("normal")}
-                  className=" px-4 py-1 rounded-lg  mr-4"
+                  className="px-4 py-1 rounded-lg mr-4"
                 >
                   Normal Mode
                 </button>
               </Link>
-              <Link>
+              <Link to="/startpage/quizpage">
                 <img
                   src="https://quizard.app/images/dinomode.png"
                   alt="img"
@@ -101,7 +107,7 @@ const StartQuizPage = () => {
                 />
                 <button
                   onClick={() => handleModeSelection("dyno")}
-                  className=" px-4 py-1 rounded-lg "
+                  className="px-4 py-1 rounded-lg"
                 >
                   Dyno Mode
                 </button>

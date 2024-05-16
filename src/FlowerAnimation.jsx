@@ -28,7 +28,7 @@ const ConfettiAnimation = () => {
     const timer = setTimeout(() => {
       setShowConfetti(false);
       document.body.style.overflow = "auto"; // Re-enable scrolling after confetti stops
-    }, 3000); // Stop confetti after 5 seconds
+    }, 5000); // Stop confetti after 5 seconds
 
     // Disable scrolling while confetti is active
     document.body.style.overflow = "hidden";
